@@ -1,5 +1,7 @@
 # Default Node gitignore from https://github.com/github/gitignore
 
+.idea
+
 # Logs
 logs
 *.log

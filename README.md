@@ -1,3 +1,42 @@
+# template app
+
+## App
+```
+{
+    state: {
+        points: [
+            {location: {x,y,z : integer},
+            color?,
+            stroke?,
+            ?}
+        ]
+    }, 
+    config, 
+    PointSource : {
+        update: (state) => {} : state
+    },
+    Drawer: {
+        draw: (state) => {} : void
+    },
+    Sounder: {
+        sound: (state) => : void
+    }
+}
+
+// pseudocode
+
+{state,drawer,sounder,pointSource,log} = config.load()
+app.start(state) {  // loop over
+    log('beginning state', state)
+    newState = pointSource.update(state)
+    drawer.draw(state, newState)
+    sounder.sound(state, newState)
+    log('completed state', state)
+    state = newState
+}
+ 
+```
+
 # ThreeTS-Template
 ThreeJS, TypeScript, GLSL, &amp; Webpack boilerplate for quick prototyping.
 
